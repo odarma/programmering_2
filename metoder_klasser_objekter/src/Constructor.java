@@ -1,5 +1,5 @@
 public class Constructor {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Student student = new Student("bob","joe",
                 32,"123");
         System.out.println(student.getFirstName()+" "

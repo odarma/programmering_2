@@ -1,4 +1,4 @@
-import java.util.Scanner; //oversetter-metode
+import java.util.Scanner; //oversetter-klasse
 
 public class CalculateWeightOnMoon {
     public static void main(String[] args) {
