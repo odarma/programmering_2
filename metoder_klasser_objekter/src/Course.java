@@ -1,5 +1,5 @@
 public class Course {
-    String name;
-    String code;
-    int studyPoints;
+    public String code;
+    public String name;
+    public int studyPoints;
 }

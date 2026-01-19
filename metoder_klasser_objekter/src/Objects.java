@@ -1,7 +1,16 @@
 public class Objects {
     public static void main(String[] args) {
         System.out.println("\n---student 1---");
-        Student student1 = new Student();
+        Student student1 = new Student("bob","job", 32, "123");
+        student1.setFirstName("bob");
+        student1.setLastName("job");
+        student1.setAge(32);
+        student1.setStudentID("1234");
+        System.out.println(student1.getFirstName()+" "
+                +student1.getLastName()+": "
+                + student1.getAge()+" years "
+                + "\nid: "+student1.getStudentID());
+        /*
         System.out.println(student1);
         student1.firstName = "Ole-Edvard";
         student1.lastName = "Ørebøk";
@@ -17,6 +26,7 @@ public class Objects {
         student2.age = 50;
         student2.studentID = 456;
         System.out.println("first name: "+student2.firstName+"\nlast name: "+student2.lastName);
+        */
 
         System.out.println("\n---Course---");
         Course programming2 = new Course();
