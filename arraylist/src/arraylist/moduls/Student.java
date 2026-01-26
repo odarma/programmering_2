@@ -15,8 +15,7 @@ public class Student {
 
     }
 
-    public Student(String firstName, String lastName,
-                   int age, String studentId) {
+    public Student(String firstName, String lastName, int age, String studentId) {
         this.firstName = firstName;
         this.lastName = lastName;
         setAge(age);

@@ -1,5 +1,4 @@
 package oblig2.models;
-import java.time.*;
 
 public class Episode {
     private String title;
@@ -18,6 +17,9 @@ public class Episode {
         setEpisodeNumber(episodeNumber);
         setSeasonNumber(seasonNumber);
     }
+    @Override public String toString() {
+        return "episode title: "+getTitle()+"\nepisode number: "+getEpisodeNumber()+"\nseason number: "+getSeasonNumber()
+                + "\nruntime in minutes: "+getRuntime()+"\n";}
 
     public String getTitle() {return title;}
     public void setTitle(String title) {this.title = title;}
@@ -26,5 +28,6 @@ public class Episode {
     public int getSeasonNumber() {return seasonNumber;}
     public void setSeasonNumber(int seasonNumber) {this.seasonNumber = seasonNumber;}
     public int getRuntime() {return runtime;}
-    public void setRuntime(int runtime) {this.runtime = runtime;}
+    public void setRuntime(int runtime) {if (runtime<=0){this.runtime = 25;} else{this.runtime=runtime;}
+    }
 }
