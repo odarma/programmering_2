@@ -1,6 +1,8 @@
 package oblig2;
 import oblig2.models.*;
 import java.time.*;
+import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -16,19 +18,26 @@ public class Main {
         int month = input.nextInt();
         System.out.println("write under the day the series released on:");
         int day = input.nextInt();
-        input.close();
 
         TVSeries noe = new TVSeries(seriesTitle,description, LocalDate.of(year, month, day));
+        Random random = new Random();
+
+        for (int season = 1; season <= 5; season++) {
+            for (int episodeNr = 1; episodeNr <= 10; episodeNr++) {
+                int randomNr = random.nextInt(20,30);
+                Episode episode  = new Episode("wawa"+episodeNr, episodeNr,season,randomNr);
+                noe.addEpisode(episode);
+            }
+        }
         System.out.println(noe);
 
-        Episode episode1 = new Episode("wawa", 1,1,25);
-        System.out.println(episode1);
-        noe.addEpisode(episode1);
-        System.out.println(noe);
-
-        Episode episode2 = new Episode("wawawa", 2,2,30);
-        System.out.println(episode2);
-        noe.addEpisode(episode2);
-        System.out.println(noe);
+        System.out.println("\nwrite which season you want to get episodes from:");
+        int chooseSeason = input.nextInt();
+        ArrayList<Episode> rah = noe.getEpisodesInSeason(chooseSeason);
+        System.out.println(rah);
+        System.out.printf("titles of episodes from season %d:", chooseSeason);
+        for (Episode rahs:rah){
+            System.out.printf("\n%s",rahs.getTitle());
+        }
     }
 }

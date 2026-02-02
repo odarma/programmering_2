@@ -13,9 +13,7 @@ public class Episode {
         setRuntime(runtime);
     }
     public Episode(String title, int episodeNumber, int seasonNumber){
-        setTitle(title);
-        setEpisodeNumber(episodeNumber);
-        setSeasonNumber(seasonNumber);
+        this(title, episodeNumber, seasonNumber,0);
     }
     @Override public String toString() {
         return "episode title: "+getTitle()+"\nepisode number: "+getEpisodeNumber()+"\nseason number: "+getSeasonNumber()

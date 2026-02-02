@@ -8,7 +8,7 @@ public class TVSeries {
     private String description;
     private LocalDate releaseDate;
     private ArrayList<Episode> episodes= new ArrayList<>();
-    private static final DateTimeFormatter correctFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private static final DateTimeFormatter correctFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
     public TVSeries(String title, String description, LocalDate releaseDate){
         setTitle(title);
@@ -19,6 +19,16 @@ public class TVSeries {
         if (episode != null) {
             episodes.add(episode);
         }
+    }
+
+    public ArrayList<Episode> getEpisodesInSeason(int season){
+        ArrayList<Episode> showEpisodes = new ArrayList<>();
+        for (int i = 0; i < getEpisodes().size() ; i++) {
+            if(getEpisodes().get(i).getSeasonNumber() == season){
+                showEpisodes.add(getEpisodes().get(i));
+            }
+        }
+        return showEpisodes;
     }
 
     @Override public String toString() {
