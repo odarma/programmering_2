@@ -9,7 +9,8 @@ public class TVSeries {
     private LocalDate releaseDate;
     private ArrayList<Episode> episodes= new ArrayList<>();
     private static final DateTimeFormatter correctFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-    private int averageRunTime;
+    private double averageRunTime;
+    private int numSeasons;
 
     public TVSeries(String title, String description, LocalDate releaseDate){
         setTitle(title);
@@ -17,10 +18,36 @@ public class TVSeries {
         setReleaseDate(releaseDate);
     }
     public void addEpisode(Episode episode){
-        if (episode != null) {
-            episodes.add(episode);
+        if (episode == null) {
+            System.out.println("\nepisode does not exist");
+            return;
+        }
+
+        if(episode.getSeasonNumber()>numSeasons+1){
+            System.out.printf("\nepisode %d season %d's season number is too high. episode not added.\n" +
+                    "the episode in question:", episode.getEpisodeNumber(), episode.getSeasonNumber());
+            System.out.println(episode);
+            return;
+        }
+
+        episodes.add(episode);
+        updateAverageRunTime();
+        if(episode.getSeasonNumber()>numSeasons){
+            numSeasons = episode.getSeasonNumber();
         }
     }
+
+    private void updateAverageRunTime(){
+        double total = 0;
+        if(episodes.isEmpty()){
+            averageRunTime = 0;
+        }else {
+            for (Episode episode : episodes) {
+                total += episode.getRuntime();
+            }
+        }
+        averageRunTime = total/getEpisodes().size();
+    };
 
     public ArrayList<Episode> getEpisodesInSeason(int season){
         ArrayList<Episode> showEpisodes = new ArrayList<>();
@@ -31,10 +58,6 @@ public class TVSeries {
         }
         return new ArrayList<>(showEpisodes);
     }
-
-    private int updateAverageRunTime(){
-
-    };
 
     @Override public String toString() {
         return "TV series title: "+getTitle()+"\ndescription: "+getDescription()+"\nrelease date: "
@@ -49,5 +72,6 @@ public class TVSeries {
     public void setDescription(String description) {this.description = description;}
     public String getTitle() {return title;}
     public void setTitle(String title) {this.title = title;}
-    public int getAverageRunTime() {return averageRunTime;}
+    public double getAverageRunTime() {return averageRunTime;}
+    public int getNumSeasons() {return numSeasons;}
 }
