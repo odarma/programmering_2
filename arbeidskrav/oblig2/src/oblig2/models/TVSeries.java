@@ -9,6 +9,7 @@ public class TVSeries {
     private LocalDate releaseDate;
     private ArrayList<Episode> episodes= new ArrayList<>();
     private static final DateTimeFormatter correctFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+    private int averageRunTime;
 
     public TVSeries(String title, String description, LocalDate releaseDate){
         setTitle(title);
@@ -23,13 +24,17 @@ public class TVSeries {
 
     public ArrayList<Episode> getEpisodesInSeason(int season){
         ArrayList<Episode> showEpisodes = new ArrayList<>();
-        for (int i = 0; i < getEpisodes().size() ; i++) {
-            if(getEpisodes().get(i).getSeasonNumber() == season){
-                showEpisodes.add(getEpisodes().get(i));
+        for (Episode episode : episodes) {
+            if(episode.getSeasonNumber() == season){
+                showEpisodes.add(episode);
             }
         }
-        return showEpisodes;
+        return new ArrayList<>(showEpisodes);
     }
+
+    private int updateAverageRunTime(){
+
+    };
 
     @Override public String toString() {
         return "TV series title: "+getTitle()+"\ndescription: "+getDescription()+"\nrelease date: "
@@ -44,4 +49,5 @@ public class TVSeries {
     public void setDescription(String description) {this.description = description;}
     public String getTitle() {return title;}
     public void setTitle(String title) {this.title = title;}
+    public int getAverageRunTime() {return averageRunTime;}
 }
