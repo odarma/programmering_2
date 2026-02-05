@@ -30,11 +30,12 @@ public class TVSeries {
             return;
         }
 
-        episodes.add(episode);
-        updateAverageRunTime();
         if(episode.getSeasonNumber()>numSeasons){
             numSeasons = episode.getSeasonNumber();
         }
+
+        episodes.add(episode);
+        updateAverageRunTime();
     }
 
     private void updateAverageRunTime(){

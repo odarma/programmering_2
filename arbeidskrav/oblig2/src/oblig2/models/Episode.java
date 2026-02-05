@@ -15,6 +15,7 @@ public class Episode {
     public Episode(String title, int episodeNumber, int seasonNumber){
         this(title, episodeNumber, seasonNumber,0);
     }
+
     @Override public String toString() {
         return "title: "+ getEpisodeTitle()+"\nepisode number: "+getEpisodeNumber()+"\nseason number: "+getSeasonNumber()
                 + "\nruntime in minutes: "+getRuntime()+"\n";}
