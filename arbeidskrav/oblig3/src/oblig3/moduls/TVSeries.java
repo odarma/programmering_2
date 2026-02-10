@@ -68,7 +68,7 @@ public class TVSeries {
     }
 
     public ArrayList<Episode> getEpisodes() {return new ArrayList<>(episodes);}
-    public LocalDate getReleaseDate() {return releaseDate;}
+    public LocalDate getReleaseDate() {return releaseDate;};
     public void setReleaseDate(LocalDate releaseDate) {this.releaseDate = releaseDate;}
     public String getDescription() {return description;}
     public void setDescription(String description) {this.description = description;}
