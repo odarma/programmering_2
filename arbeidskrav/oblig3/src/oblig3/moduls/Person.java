@@ -11,6 +11,11 @@ public class Person {
         setAge(age);
     }
 
+    @Override
+    public String toString() {
+        return String.format("full name: %s\nage: %d\n", getFullName(), getAge());
+    }
+
     public String getFullName() {return String.format("%s %s",getFirstName(),getLastName());}
     public void setFirstName(String firstName) {this.firstName = firstName;}
     public void setLastName(String lastName) {this.lastName = lastName;}

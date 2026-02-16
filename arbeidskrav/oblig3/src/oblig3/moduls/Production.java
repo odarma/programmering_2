@@ -1,6 +1,7 @@
 package oblig3.moduls;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 public class Production{
     private String title;
@@ -9,6 +10,7 @@ public class Production{
     private String description;
     private LocalDate releaseDate;
     private Person director;
+    private ArrayList<Role> roles = new ArrayList<>();
 
     public Production (String title, double runtime,String description,LocalDate releaseDate,Person director) {
         setTitle(title);
@@ -18,6 +20,13 @@ public class Production{
         setDirector(director);
     }
     public Production (String episodeTitle) {this(episodeTitle,0,null,null,null);}
+
+    public void addRoles(Role role){
+        roles.add(role);
+    };
+    public void addRoles(ArrayList<Role> listOfRoles){
+        roles.addAll(listOfRoles);
+    };
 
     @Override public String toString() {
         return "title: "+getTitle()+"\ndescription: "+getDescription() +"\nrelease date: "+getReleaseDate().format(correctFormat)
@@ -35,4 +44,5 @@ public class Production{
     public void setDescription(String description) {this.description = description;}
     public Person getDirector() {return director;}
     public void setDirector(Person director) {this.director = director;}
+    public ArrayList<Role> getRoles() {return new ArrayList<>(roles);}
 }
