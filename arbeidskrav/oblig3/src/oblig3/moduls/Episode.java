@@ -13,7 +13,9 @@ public class Episode extends Production{
         setSeasonNumber(seasonNumber);
     }
     public Episode(String episodeTitle, int episodeNumber, int seasonNumber){
-        this(episodeTitle, episodeNumber, seasonNumber,0,null,null,null);
+        super(episodeTitle);
+        setEpisodeNumber(episodeNumber);
+        setSeasonNumber(seasonNumber);
     }
 
     @Override public String toString() {

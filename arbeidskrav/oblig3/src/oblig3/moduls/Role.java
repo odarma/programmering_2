@@ -13,7 +13,7 @@ public class Role{
     }
 
     @Override public String toString() {
-        return String.format("role: %s %s\nplayed by:\n%s",getRoleFirstName(), getRoleLastName(), getActor());}
+        return String.format("%s %s (%s)",getRoleFirstName(), getRoleLastName(), getActor().getFullName());}
 
     public String getRoleFirstName() {return roleFirstName;}
     public void setRoleFirstName(String roleFirstName) {this.roleFirstName = roleFirstName;}
