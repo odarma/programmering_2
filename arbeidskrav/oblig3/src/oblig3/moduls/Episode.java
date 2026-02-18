@@ -12,6 +12,7 @@ public class Episode extends Production{
         setEpisodeNumber(episodeNumber);
         setSeasonNumber(seasonNumber);
     }
+
     public Episode(String episodeTitle, int episodeNumber, int seasonNumber){
         super(episodeTitle);
         setEpisodeNumber(episodeNumber);

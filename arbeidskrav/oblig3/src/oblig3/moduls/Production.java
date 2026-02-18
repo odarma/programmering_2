@@ -18,21 +18,22 @@ public class Production{
         setDirector(director);
     }
     public Production (String title) {setTitle(title);}
-
+    public Production(String title, double runtime) {
+        this(title);
+        setRuntime(runtime);
+    }
     public Production(String title, String description, LocalDate releaseDate) {
         this(title);
         setDescription(description);
         setReleaseDate(releaseDate);
     }
 
-    public void addRoles(Role role){
-        roles.add(role);
-    };
-    public void addRoles(ArrayList<Role> listOfRoles) {roles.addAll(listOfRoles);};
+    public void addRoles(Role role){roles.add(role);}
+    public void addRoles(ArrayList<Role> listOfRoles) {roles.addAll(listOfRoles);}
 
     @Override public String toString() {
-        return "title: "+getTitle()+"\ndescription: "+getDescription() +"\nrelease date: "+getReleaseDate().format(correctFormat)
-                +"\nruntime in minutes: "+getRuntime()+"\ndirector: "+getDirector().getFullName()+"\n";
+        return getTitle()+"\ndescription: "+getDescription() +"\nrelease date: "+getReleaseDate().format(correctFormat)
+                +"\nruntime in minutes: "+getRuntime()+"\n";
     }
 
     public String getFormattedReleaseDate() {if (releaseDate == null) {return "N/A";}return releaseDate.format(correctFormat);}

@@ -6,7 +6,6 @@ import java.util.*;
 
 public class TVSeries extends Production{
     private ArrayList<Episode> episodes= new ArrayList<>();
-    private static final DateTimeFormatter correctFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
     private double averageRunTime;
     private int numSeasons;
 
@@ -21,6 +20,15 @@ public class TVSeries extends Production{
         }
         return new ArrayList<>(uniqueRoles);
     }
+    public ArrayList<Person> getDirectors() {
+        HashSet<Person> uniquePerson = new HashSet<>();
+        for (Episode episode : getEpisodes()) {
+            if (episode.getDirector() != null) {
+                uniquePerson.add(episode.getDirector());
+            }
+        }
+        return new ArrayList<>(uniquePerson);
+    }
 
     public void addEpisode(Episode episode){
         if (episode == null) {
@@ -29,7 +37,7 @@ public class TVSeries extends Production{
         }
 
         if(episode.getSeasonNumber()>getNumSeasons()+1){
-            System.out.printf("\nepisode %d season %d's season number is too high. episode not added.\n" +
+            System.out.printf("%n episode %d season %d's season number is too high. episode not added.%n" +
                     "the episode in question:\n", episode.getEpisodeNumber(), episode.getSeasonNumber());
             System.out.println(episode);
             return;
@@ -53,7 +61,7 @@ public class TVSeries extends Production{
             }
         }
         averageRunTime = total/getEpisodes().size();
-    };
+    }
 
     public ArrayList<Episode> getEpisodesInSeason(int season){
         ArrayList<Episode> showEpisodes = new ArrayList<>();
@@ -66,9 +74,22 @@ public class TVSeries extends Production{
     }
 
     @Override public String toString() {
-        return "TV series title: "+getTitle()+"\ndescription: "+getDescription()+"\nrelease date: "
-                +getReleaseDate().format(correctFormat)
-                +"\nnumber of episodes: "+getEpisodes().size()+"\n";
+        StringBuilder sb = new StringBuilder();
+        sb.append("TV-series title: ").append(getTitle()).append("\n");
+        sb.append("Number of episodes: ").append(getEpisodes().size()).append("\n");
+        sb.append("Average runtime: ").append(Math.round(getAverageRunTime())).append(" min\n");
+
+        sb.append("Cast members:\n");
+        for (Role role : getCast()) {
+            sb.append("  - ").append(role).append("\n");
+        }
+
+        sb.append("Directors:\n");
+        for(Person director:getDirectors()){
+            sb.append("  - ").append(director).append("\n");
+        }
+
+        return sb.toString();
     }
 
     public ArrayList<Episode> getEpisodes() {return new ArrayList<>(episodes);}

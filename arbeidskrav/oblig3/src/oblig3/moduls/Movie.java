@@ -6,5 +6,15 @@ public class Movie extends Production {
         super(title, runtime,description,releaseDate,director);
     }
 
-    @Override public String toString() {return super.toString();}
+    @Override public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Movie title: ").append(getTitle()).append("\n");
+        sb.append("Description: ").append(getDescription()).append("\n");
+        sb.append("Director(s): ").append(getDirector().getFullName()).append("\n");
+        sb.append("Role(s) and its(their) actor(s):\n");
+        for (Role role : getRoles()) {
+            sb.append("  - ").append(role).append("\n");
+        }
+        return sb.toString();
+    }
 }

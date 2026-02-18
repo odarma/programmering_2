@@ -59,13 +59,13 @@ public class Main {
         honhon.addRoles(ts);
         honhon.addRoles(listOfRoles);
         System.out.println(honhon);
+        System.out.println("\n\nRoles for honhon:");
         for (Role show:honhon.getRoles()){
             System.out.println(show);
         }
 
-        System.out.println(noe);
         ArrayList<Episode> season42 = noe.getEpisodesInSeason(42);
-        System.out.println("--- episodes in season 42 ---");
+        System.out.println("\n--- episodes in season 42 ---");
         System.out.printf("%-13s %-10s %-7s %-10s %-15s %-15s %-14s %s \n",
                 "Title", "Episode", "Season", "Runtime","Description","Release Date","Director","Role");
 
@@ -81,5 +81,6 @@ public class Main {
         for (Role role : noe.getCast()) {
             System.out.println("- " + role);
         }
+        System.out.println("\n\n"+noe);
     }
 }
