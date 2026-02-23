@@ -38,7 +38,7 @@ public class Main {
         int episode = 1;
         int season = 1;
         int episodeNr = 1;
-        int aarFoer = date.getYear();
+        int aarFoer = date.getYear();   
         while(episodeNr<=14430){
             if (date.getYear()>aarFoer){
                 aarFoer = date.getYear();
