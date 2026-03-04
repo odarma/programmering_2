@@ -65,7 +65,7 @@ public class TVSeries extends Production{
 
     @Override public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("TV-series title: ").append(getTitle()).append("\n");
+        sb.append("TV-series title: ").append(super.toString());
         sb.append("Number of episodes: ").append(getEpisodes().size()).append("\n");
         sb.append("Average runtime: ").append(Math.round(getAverageRunTime())).append(" min\n");
 

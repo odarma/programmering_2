@@ -32,8 +32,7 @@ public abstract class Production{
     public void addRoles(ArrayList<Role> listOfRoles) {roles.addAll(listOfRoles);}
 
     @Override public String toString() {
-        return getTitle()+"\ndescription: "+getDescription() +"\nrelease date: "+getReleaseDate().format(correctFormat)
-                +"\nruntime in minutes: "+getRuntime()+"\n";
+        return getTitle()+"\nDescription: "+getDescription() +"\nRelease date: "+getReleaseDate().format(correctFormat)+"\n";
     }
 
     public String getTitle() {return title;}

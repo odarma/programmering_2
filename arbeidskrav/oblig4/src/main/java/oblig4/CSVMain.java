@@ -15,7 +15,11 @@ public class CSVMain {
         File f = new File("kys.csv");
         TVSeriesCSVRepository sendFile = new TVSeriesCSVRepository(f);
         sendFile.addListOfTVSeries(tvSeriesArrayList);
-        sendFile.getAllTVSeries();
-
+        for (TVSeries tvs:sendFile.getAllTVSeries()){
+            System.out.println("Lest fra fil: \ntitle: " + tvs.getTitle() + "\nrelease date: " + tvs.getReleaseDate()
+            +"\ndescription: "+tvs.getDescription()+"\n");
+        }
+        System.out.println(sendFile.getTVSeriesByTitle("wawa"));
+        System.out.println(sendFile.getTVSeriesByTitle("wow"));
     }
 }
