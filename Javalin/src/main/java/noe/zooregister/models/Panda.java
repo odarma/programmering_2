@@ -8,7 +8,7 @@ public class Panda extends Animal{
     public Panda(String name, LocalDate birthDate, String kungFuBelt) {
         super(name, birthDate);
         setSpecies("Panda");
-        setKungFuBelt(kungFuBelt);
+        this.setKungFuBelt(kungFuBelt);
     }
 
     public String getKungFuBelt() {return kungFuBelt;}

@@ -10,7 +10,7 @@ public class Zoo {
         this.name = name;
     }
 
-    public void addAnimals(Animal animal) {animals.add(animal);}
+    public void addAnimal(Animal animal) {animals.add(animal);}
     public ArrayList<Animal> getAnimals() {return new ArrayList<>(animals);}
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}

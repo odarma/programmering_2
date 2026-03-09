@@ -8,7 +8,7 @@ public class Chimp extends Animal{
     public Chimp(String name, LocalDate birthDate,int iq){
         super(name,birthDate);
         setIq(iq);
-        setSpecies("Chimp");
+        this.setSpecies("Chimp");
     }
 
     public int getIq() {return iq;}
