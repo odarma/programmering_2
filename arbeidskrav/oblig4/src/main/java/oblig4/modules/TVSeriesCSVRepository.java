@@ -1,22 +1,24 @@
 package oblig4.modules;
 import java.io.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class TVSeriesCSVRepository implements TVSeriesRepository{
     private File file;
+    private static final DateTimeFormatter correctFormat = DateTimeFormatter.ofPattern("d.M.yyyy");
 
     public TVSeriesCSVRepository(File f){setFile(f);}
 
     @Override public void addListOfTVSeries(ArrayList<TVSeries> listOfTVSeries) {
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(getFile()))) {
             for (TVSeries TVS:listOfTVSeries){
-                bufferedWriter.write("Title: "+TVS.getTitle());
+                bufferedWriter.write("Title:"+TVS.getTitle());
                 bufferedWriter.newLine();
-                bufferedWriter.write("Release date: "+ TVS.getReleaseDate().getDayOfMonth()+"."+
+                bufferedWriter.write("Release date:"+ TVS.getReleaseDate().getDayOfMonth()+"."+
                         TVS.getReleaseDate().getMonthValue() +"."+TVS.getReleaseDate().getYear());
                 bufferedWriter.newLine();
-                bufferedWriter.write("Description: "+TVS.getDescription());
+                bufferedWriter.write("Description:"+TVS.getDescription());
                 bufferedWriter.newLine();
                 bufferedWriter.newLine();
             }
@@ -31,12 +33,18 @@ public class TVSeriesCSVRepository implements TVSeriesRepository{
             if (file.canRead()) {
                 String line;
                 while ((line = bufferedReader.readLine()) != null) {
-                    String[] values = line.split(":");
-                    String title = values[0];
-                    String releaseDate = values[1];
-                    String description = values[2];
-                    LocalDate date = LocalDate.parse(releaseDate);
-                    TVSeries newTVS = new TVSeries(title, description, date);
+                    if (line.isBlank()) {continue;}
+
+                    String title = line.split(":")[1];
+
+                    String dateLine = bufferedReader.readLine();
+                    String dateString = dateLine.split(":")[1];
+                    LocalDate releaseDate = LocalDate.parse(dateString,correctFormat);
+
+                    String descLine = bufferedReader.readLine();
+                    String description = descLine.split(":")[1];
+
+                    TVSeries newTVS = new TVSeries(title, description, releaseDate);
                     fetchedTVS.add(newTVS);
                 }
             }
@@ -50,7 +58,13 @@ public class TVSeriesCSVRepository implements TVSeriesRepository{
 
     @Override
     public TVSeries getTVSeriesByTitle(String title) {
-        return null;
+        TVSeries fetchedTVS = null;
+        for (TVSeries tvs:getAllTVSeries()){
+            if (tvs.getTitle().equalsIgnoreCase(title)) {
+                fetchedTVS = tvs;
+            }
+        }
+        return fetchedTVS;
     }
 
     public void setFile(File file) {this.file = file;}
