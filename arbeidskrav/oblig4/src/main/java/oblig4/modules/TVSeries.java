@@ -9,6 +9,8 @@ public class TVSeries extends Production{
     private double averageRunTime;
     private int numSeasons;
 
+    public TVSeries(){super();}
+
     public TVSeries(String title, String description, LocalDate releaseDate){
         super(title,description,releaseDate);
     }

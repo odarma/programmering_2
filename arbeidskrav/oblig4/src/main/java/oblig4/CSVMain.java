@@ -19,7 +19,7 @@ public class CSVMain {
             System.out.println("Lest fra fil: \ntitle: " + tvs.getTitle() + "\nrelease date: " + tvs.getReleaseDate()
             +"\ndescription: "+tvs.getDescription()+"\n");
         }
-        System.out.println(sendFile.getTVSeriesByTitle("wawa"));
-        System.out.println(sendFile.getTVSeriesByTitle("wow"));
+        System.out.println("Valgt TV-serie lest fra fil: \n"+sendFile.getTVSeriesByTitle("wawa"));
+        System.out.println("Valgt TV-serie lest fra fil: \n"+sendFile.getTVSeriesByTitle("wow"));
     }
 }

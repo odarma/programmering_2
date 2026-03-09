@@ -12,6 +12,8 @@ public abstract class Production{
     private Director director;
     private ArrayList<Role> roles = new ArrayList<>();
 
+    public Production(){}
+
     public Production (String title, double runtime,String description,LocalDate releaseDate,Director director) {
         this(title, description, releaseDate);
         setRuntime(runtime);

@@ -1,0 +1,25 @@
+[ {
+  "title" : "wawa",
+  "runtime" : 0.0,
+  "description" : "ada kadabra sim sala binz",
+  "releaseDate" : [ 2001, 9, 11 ],
+  "director" : null,
+  "roles" : [ ],
+  "episodes" : [ ],
+  "averageRunTime" : 0.0,
+  "numSeasons" : 0,
+  "directors" : [ ],
+  "cast" : [ ]
+}, {
+  "title" : "nya",
+  "runtime" : 0.0,
+  "description" : "neko",
+  "releaseDate" : [ 2222, 2, 22 ],
+  "director" : null,
+  "roles" : [ ],
+  "episodes" : [ ],
+  "averageRunTime" : 0.0,
+  "numSeasons" : 0,
+  "directors" : [ ],
+  "cast" : [ ]
+} ]
