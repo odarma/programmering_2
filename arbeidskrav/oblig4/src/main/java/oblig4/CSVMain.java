@@ -1,6 +1,8 @@
 package oblig4;
 
 import oblig4.modules.*;
+import oblig4.repositories.TVSeriesCSVRepository;
+
 import java.io.*;
 import java.time.*;
 import java.util.*;
