@@ -6,8 +6,6 @@ import noe.zooregister.models.*;
 import noe.zooregister.repository.ZooDummyRepository;
 import noe.zooregister.repository.ZooRepository;
 import org.jetbrains.annotations.NotNull;
-import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class Application {
     public static void main(String[] args) {
