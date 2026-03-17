@@ -19,9 +19,7 @@ public class Application {
         ZooController zooController = new ZooController(zooRepository);
 
         // --- API ---
-        app.get("/api/add-zoo",context -> {
-            zooController.addZoo(context);
-        });
+        app.get("/api/add-zoo",context -> zooController.addZoo(context));
 
         app.get("/api/zoo/{zoo-name}", zooController::getZooByName);
 
