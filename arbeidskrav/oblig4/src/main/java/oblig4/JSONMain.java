@@ -1,8 +1,7 @@
 package oblig4;
 
 import oblig4.modules.TVSeries;
-import oblig4.modules.TVSeriesCSVRepository;
-import oblig4.modules.TVSeriesJSONRepository;
+import oblig4.repositories.TVSeriesJSONRepository;
 
 import java.io.File;
 import java.time.LocalDate;

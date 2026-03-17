@@ -1,7 +1,8 @@
-package oblig4.modules;
+package oblig4.repositories;
 import com.fasterxml.jackson.databind.json.*;
 import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.datatype.jsr310.*;
+import oblig4.modules.TVSeries;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;

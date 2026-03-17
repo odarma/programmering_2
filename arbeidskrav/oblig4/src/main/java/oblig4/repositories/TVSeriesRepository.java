@@ -1,4 +1,6 @@
-package oblig4.modules;
+package oblig4.repositories;
+import oblig4.modules.TVSeries;
+
 import java.util.ArrayList;
 
 public interface TVSeriesRepository {
