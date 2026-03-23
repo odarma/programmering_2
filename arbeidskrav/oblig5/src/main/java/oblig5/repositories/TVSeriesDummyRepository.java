@@ -6,7 +6,7 @@ import java.time.*;
 import java.util.*;
 
 public class TVSeriesDummyRepository implements TVSeriesRepository{
-    private ArrayList<TVSeries> allTvSeries;
+    private ArrayList<TVSeries> allTvSeries = new ArrayList<>();
 
     public TVSeriesDummyRepository (){
         Random random = new Random();
