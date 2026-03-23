@@ -10,18 +10,18 @@ public class TVSeriesController {
     public TVSeriesController (TVSeriesRepository tvs){setTvSeriesRepository(tvs);}
 
     public void getAllTvSeries(Context context){context.json(getTvSeriesRepository().getAllTVSeries());}
-    public void getTvSeriesByTitle(Context context,String title){
-        String name = context.pathParam("name");
+    public void getTvSeriesByTitle(Context context){
+        String title = context.pathParam("title");
         TVSeries fetchedTVS = getTvSeriesRepository().getTVSeriesByTitle(title);
 
         if (fetchedTVS != null) {
             context.json(fetchedTVS);
         }
         else {
-            context.result("Could not find TV-serie with this name: " + name);
+            context.result("Could not find TV-serie with this name: " + title);
         }
     }
-    //public void addTvSeries(Context context){context.json(getTvSeriesRepository().addTvSeries());}
+    //public void addTvSeries(Context context){context.json(getTvSeriesRepository().addTvSeries(context));}
 
     public TVSeriesRepository getTvSeriesRepository() {
     return tvSeriesRepository;

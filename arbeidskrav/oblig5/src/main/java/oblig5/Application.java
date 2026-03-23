@@ -14,15 +14,16 @@ public class Application {
         Javalin app = Javalin.create(config -> {
             config.staticFiles.enableWebjars();
             config.vue.vueInstanceNameInJs = "app";
-        }).start(1337);
-
-        // --- API ---
-        app.get("/api/tvseries/{name}",new VueComponent("name"));
+        }).start(8080);
 
         // --- Sider ---
         app.get("/", new VueComponent("home-page"));
-        app.get("/api/add-tvseries",new VueComponent("add-tvseries"));
-        app.get("/tvseries/{name}", new VueComponent("tvseries-detail"));
+        app.get("/tvseries/{title}", new VueComponent("tvseries-detail"));
         app.get("/tvseries",new VueComponent("tvseries-overview"));
+
+        // --- API ---
+        app.get("/api/tvseries/{title}", tvSeriesController::getTvSeriesByTitle);
+        app.get("/api/tvseries",tvSeriesController::getAllTvSeries);
+        //app.get("/api/add-tvseries",tvSeriesController::addTvSeries);
     }
 }
