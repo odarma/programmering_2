@@ -20,6 +20,7 @@ public class Application {
         app.get("/", new VueComponent("home-page"));
         app.get("/tvseries/{title}", new VueComponent("tvseries-detail"));
         app.get("/tvseries",new VueComponent("tvseries-overview"));
+        app.get("/add-tvseries",new VueComponent("add-tvseries"));
 
         // --- API ---
         app.get("/api/tvseries/{title}", tvSeriesController::getTvSeriesByTitle);

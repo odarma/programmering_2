@@ -22,7 +22,7 @@ app.component("tvseries-detail", {
     tvSeries: {}
   }),
   created() {
-    const tvSeriesName = this.$javalin.pathParams["tvseries-name"];
+    const tvSeriesName = this.$javalin.pathParams["title"];
 
     fetch(`/api/tvseries/${tvSeriesName}`)
         .then(res => res.json())
