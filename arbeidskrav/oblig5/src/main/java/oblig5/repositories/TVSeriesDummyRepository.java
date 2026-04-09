@@ -92,7 +92,7 @@ public class TVSeriesDummyRepository implements TVSeriesRepository{
     @Override public void addTvSeries(TVSeries tvSerie){allTvSeries.add(tvSerie);}
 
     @Override public void addListOfTVSeries(ArrayList<TVSeries> listOfTVSeries) {
-        getAllTVSeries().addAll(listOfTVSeries);
+        allTvSeries.addAll(listOfTVSeries);
     }
 
     @Override public ArrayList<TVSeries> getAllTVSeries() {

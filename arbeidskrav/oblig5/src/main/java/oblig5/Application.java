@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class Application {
     public static void main(String[] args) {
-        TVSeriesDummyRepository tvSeriesRepository = new TVSeriesDummyRepository();
+        TVSeriesRepository tvSeriesRepository = new TVSeriesDummyRepository();
         TVSeriesController tvSeriesController = new TVSeriesController(tvSeriesRepository);
 
         Javalin app = Javalin.create(config -> {
@@ -25,6 +25,6 @@ public class Application {
         // --- API ---
         app.get("/api/tvseries/{title}", tvSeriesController::getTvSeriesByTitle);
         app.get("/api/tvseries",tvSeriesController::getAllTvSeries);
-        //app.get("/api/add-tvseries",tvSeriesController::addTvSeries);
+        app.post("/api/add-tvseries",tvSeriesController::addTvSeries);
     }
 }
