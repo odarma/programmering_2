@@ -29,7 +29,7 @@ public class Main {
         for (Person currentPerson : listOfPersons) { //refaktorisering fra if-else til switch-case
             switch (currentPerson) {
                 case BussDriver bussDriver ->
-                        System.out.println("\n" + currentPerson.getFirstName() + "is a buss driver" + bussDriver.getRoute());
+                        System.out.println("\n" + currentPerson.getFirstName() + "is a buss driver: " + bussDriver.getRoute());
                 case CarpenterApprentice carpenterApprentice ->
                         System.out.println("\n" + currentPerson.getFirstName() + "is a carpenter apprentice with training period from "
                                 + carpenterApprentice.getTrainingStartDate() + " to " + carpenterApprentice.getTrainingEndDate());

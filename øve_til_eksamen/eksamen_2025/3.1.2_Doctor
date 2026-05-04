@@ -1,0 +1,9 @@
+public class Doctor extends Person{
+	private String office;
+	private MedicalLicence ml; 
+	
+	public Doctor(String name, String birthNumber, double heightInCm,MedicalLicence ml){
+		super(name,birthNumber,heightInCm);
+		setMedicalLicence(ml);
+	}
+}

@@ -1,0 +1,34 @@
+public class MedicalCareDataRegistry implements MedicalCareRegistry{
+	ArrayList<Person> listOfPersons = new ArrayList<>();
+	ArrayList<Prescription> listOfPrescriptions = new ArrayList<>();
+	
+	public MedicalCareDataRegistry(){
+		Person Ole = new Patient(...);
+		Person Nina = new Doctor(...);
+		Prescription magnesiumPills = new Prescription(...); //antar at informasjonene er skrevet
+		
+		addPerson(Ole);
+		addPerson(Nina);
+		listOfPrescriptions.add(magnesiumPills);
+	}
+	
+	public ArrayList<Person> getAllPersons(){
+		return new ArrayList<>(listOfPersons);
+	}
+	
+	public ArrayList<Prescriptions> getPatientPrescriptions(Patient patient){
+		ArrayList<Prescriptions> pp = new ArrayList<>();
+		for(Prescriptions prescription : listOfPrescriptions){
+			if (patient == prescription.getPatient()){
+				pp.add(prescription);
+			}
+		}
+		return new ArrayList<>(pp);
+	}
+	
+	public void addPerson(Person person){
+		listOfPersons.add(person);
+	}
+	
+	
+}

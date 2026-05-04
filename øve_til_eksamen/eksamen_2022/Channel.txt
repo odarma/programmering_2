@@ -1,0 +1,16 @@
+public class Channel{
+	String name;
+	ArrayList<VisualMedia> visualMedia = new ArrayList<>();
+	int videoViews;
+	
+	private void updateVideoViews(){
+		if (visualMedia.isEmpty()){
+			videoViews = 0;
+			System.out.println("the list of visual media is empty");
+		} else{
+			for (VisualMedia vm : visualMedia){
+				videoViews+= vm.getViews();
+			}
+		}
+	}
+}

@@ -2,6 +2,9 @@ package noe;
 import noe.interfaces.Drawable;
 import noe.module.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Main {
     public static void main(String[] args) {
         Rectangle rectangle = new Rectangle("blue",23,23);
@@ -15,6 +18,25 @@ public class Main {
 
         Drawable drawable = new Rectangle("yellow",13,4);
         System.out.println(drawable);
+
+        ArrayList<Figure> figureList = new ArrayList<>();
+        figureList.add(circle);
+        figureList.add(rectangle);
+        figureList.add(new Circle("Cyan", 0.4));
+
+        System.out.println("\n---Unsorted list---");
+        for (Figure figure : figureList) {
+            System.out.println(figure);
+            System.out.println();
+        }
+
+        Collections.sort(figureList);
+
+        System.out.println("\n---Sorted list---");
+        for (Figure figure : figureList) {
+            System.out.println(figure);
+            System.out.println();
+        }
     }
 }
 

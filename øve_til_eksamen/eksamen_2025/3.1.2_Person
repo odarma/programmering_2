@@ -1,0 +1,15 @@
+public abstract class Person {
+	private final String birthNumber;
+	private String name;
+	private double heightInCm;
+	
+	public Person (String name, String birthNumber){
+		this.birthNumber = birthNumber;
+		setName(name);
+	}
+	public Person (String name, String birthNumber, double heightInCm){
+		this(name,birthNumber);
+		setHeightInCm(heightInCm);
+	}
+	
+}

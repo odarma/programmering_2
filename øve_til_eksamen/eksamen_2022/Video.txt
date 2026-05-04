@@ -1,0 +1,19 @@
+//gjort: 3.1.x, 3.2, 3.3, 3.4, 3.5
+public class Video extends VisualMedia{
+	private int views;
+	private static int totalNumberOfVideos;
+	
+	public Video(String title, double lengthInMinutes, int views, Channel channel){
+		super(title,lengthInMinutes,channel);
+		setViews(views);
+		addVideo();
+	}
+	
+	private void addVideo(){
+		totalNumberOfVideos++;
+	}
+	
+	public void printNumberOfVideos(){
+		System.out.println("The total number of videos created is "+getTotalNumberOfVideos());
+	}
+}

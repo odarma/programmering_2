@@ -1,0 +1,24 @@
+public class Patient{
+	private final String birthNumber;
+	private String name;
+	private double heightInCm;
+	private Doctor regularGP;
+	
+	public Patient(String name, String birthNumber){
+		this.birthNumber=birthNumber;
+		setName(name);
+	}
+	
+	public Patient (String name, String birthNumber, Doctor regularGP){
+		this(name,birthNumber);
+		setRegularGP(regularGP);
+	}
+	
+	@Override public String toString(){return getBirthNumber() + " - " + getName() + "\n";}
+	
+	public String getBirthNumber(){return birthNumber;}
+	public void setName(String name){this.name=name;}
+	public String getName(){return name;}
+	public void setRegularGP(Doctor regularGP){this.regularGP=regularGP;}
+	public Doctor getRegularGP(){return regularGP;}
+}

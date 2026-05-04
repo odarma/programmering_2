@@ -1,0 +1,14 @@
+public class MedicalCareLogic{
+	public void describePersonsInRegistry(){
+		for(Person currentPerson : medicalCareRegistry.getAllPersons()) {
+			switch (currentPerson) {
+				case Doctor doctor -> System.out.println(doctor.getName() + 
+					" is a doctor that works at the office " + doctor.getOffice());
+				case Patient patient -> System.out.println(patient.getName() + 
+					" is a patient and has the doctor " + patient.getRegularGP().getName() + " as their regular GP.");
+				default -> System.out.println("Unknown person type: "+currentPerson);
+        }
+    }
+}
+	}
+}

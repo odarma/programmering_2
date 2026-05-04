@@ -1,0 +1,24 @@
+public class VisualMedia implements Comparable<VisualMedia>{
+	private String title;
+	private double lengthInMinutes;
+	private Channel channel;
+	
+	public VisualMedia(String title, double lengthInMinutes, Channel channel){
+		setTitle(title);
+		setLengthInMinutes(lengthInMinutes);
+		setChannel(channel);
+	}
+	
+	@Override
+    public int compareTo(VisualMedia otherMedia) {
+        return Double.compare(otherMedia.getLengthInMinutes(), this.getLengthInMinutes()); 
+		//slik koden ser ut vil den gi synkende rekkefølge. f.eks. this (verdi: 10), otherMedia (verdi: 5), fordi 5 er mindre enn 10 vil 
+    }
+	
+	public String getTitle(){
+		return title;
+	}
+	public String setTitle(String title){
+		return this.title = title;
+	}
+}

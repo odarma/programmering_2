@@ -1,0 +1,5 @@
+public interface MedicalCareRegistry{
+	public ArrayList<Person> getAllPersons();
+	public ArrayList<Prescription> getPatientPrescriptions(Patient patient);
+	public void addPerson(Person person);
+}

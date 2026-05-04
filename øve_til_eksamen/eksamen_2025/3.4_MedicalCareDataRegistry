@@ -1,0 +1,26 @@
+public class MedicalCareDataRegistry{
+	public ArrayList<Patient> readPatientsFromCSV(File f){
+		ArrayList<Patient> fetchedPatient = new ArrayList<>();
+
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(f))) {
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+				String[] values = line.split(";");
+				
+				String birthNumber = values[0];
+                String name = values[1];
+				double heightInCm = Double.parseDouble(values[2]);
+				
+				Patient patient = new Patient (name, birthNumber, heightInCm);
+				fetchedPatient.add(patient);
+			}
+		}
+		catch (FileNotFoundException exception) {
+            System.err.println("Could not find file with name " + f.getName());
+        }
+        catch (IOException e) {
+            System.err.println("Something went wrong when reading patients from file: "+e.getMessage());
+        }
+		return fetchedPatient;
+	}
+}

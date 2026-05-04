@@ -1,0 +1,14 @@
+import java.time.*;
+
+public class LiveStream{
+	public void startStream(LiveStream livestream){
+		try (LiveStreamConnection connection = new LiveStreamConnection(livestream)){
+			connection.openConnection();
+			connection.awaitStreamEnd();
+		} catch(ConnectionException e){
+			System.out.println("Something went wrong with the connection: " + e.getMessage());
+		} catch(OpenConnectionException e) {
+			System.out.println("Could not start the livestream: " + e.getMessage());
+		}
+	}
+}
