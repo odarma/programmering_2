@@ -1,0 +1,72 @@
+1. B
+2. C
+3. C
+4. B
+5. A
+6. B
+7. B
+8. B
+9. A
+10. B
+11. A
+12. A
+13. B
+14. B
+15. B
+16. A
+17. B
+18. B
+19. B
+20. C
+21. C
+22. B
+23. A
+24. A
+25. B
+26. B
+27. B
+28. B
+29. B
+30. A
+
+
+
+
+1. ville si "Animal Dog"
+2. Parent sin metode kjøres og vil utskrive "Parent"
+3. klassen har en overloading-situasjon hvor int og double metodene henholdsvis adderer like verdier. koden vil kompileres
+4. verdien blir 1
+5. instansvariabelens tilgang er steng for Main p.g.a. den er private. koden i Main vil ikke skje
+6. Circle mangler en konstruktør som tar inn verdier og en implementasjon av draw()-metoden
+7. c
+8. en feilmelding om at List er av datatypen String og kan ikke legge inn int-verdier
+9. nei fordi abstract-klasser kan ikke instansieres
+10. for hver tall som hentes, skal tallen skrives ut
+
+1. siden "new B();" er en instans av klasse A, så vil objektet bare ha tilgang til metoder i klasse A
+2. final-klasse har vi ikke gått gjennom, men kan gjette at Disclosure kan ikke arve fra Secret
+3. super
+4. ingenting fordi instansen er en instans av Person og ikke har tilgang til Student sin metode
+5. 30
+6. da er konstruktøren bare tilgjengelig internt, som vil si bare for klassen som bruker konstruktøren og klasser som arver den.
+7. this.name = name betyr at hver gang variabelen instansieres, vil gitt verdi tilhøre bare instansen og bare kan endres av instansen. name = name betyr at hver gang den instansieres, vil gitt verdi tilhøre alle sammen og alle kan endre den.
+8. størrelsen er 1
+9. A
+10. vi har ikke gått gjennom dette, men gjetter at feilmeldingen er at listen finnes ikke og dermed ikke kan legge til verdier.
+11. nei
+12. implements
+13. metode er ikke implementert i forelder- eller barneklasse
+14. ja siden metoden tilhører ulike interfaces
+15. 2 
+16. vet ikke
+17. for å automatisk lukke filbehandlingen
+18. 2
+19. vil gi feilmelding om at variabelen ikke kan endres
+20. A har en samling av objekter av B, vanskelig å svare uten en visuell representasjon
+21. Runnable r = () -> {System.out.println("Hello");}
+22. interfaces-klassen må ha en metode, Main-klassen trenger en implementasjon av interface. 
+23. 2 og 3
+24., 25. og 26. ikke gått gjennom
+27. get brukes for henting av data, post for andre ting enn henting av data
+28 og 29. ikke gått gjennom
+30. at Java hovedsakelig er imperativ, men støtter deklarativ og funksjonell programmering
